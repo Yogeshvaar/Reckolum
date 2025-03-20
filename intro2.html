@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register a Complaint - Reckolum</title>
+    <link rel="stylesheet" href="intro1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to complaint form */
+        .complaint-form {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .complaint-form input, 
+        .complaint-form textarea, 
+        .complaint-form select {
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .file-upload {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .file-upload i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .file-upload-text {
+            display: block;
+        }
+        
+        #file-upload-input {
+            display: none;
+        }
+        
+        .priority-indicator {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .priority-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .priority-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #28a745, #ffc107, #dc3545);
+            transition: width 0.5s ease;
+        }
+        
+        .priority-score {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Reckolum</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register-complaint.html" class="active">Register a Complaint</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Complaint Form Section -->
+    <section class="complaint-section" id="complaint-form">
+        <div class="complaint-form">
+            <div class="form-header">
+                <h2>Register a Cybersecurity Complaint</h2>
+                <p>Fill in the details below and our AI system will prioritize your case based on severity</p>
+            </div>
+            
+            <form id="complaintForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name*</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Complaint Category*</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="financial">Financial Fraud</option>
+                            <option value="safety">Women & Child Safety</option>
+                            <option value="data">Data Breaches</option>
+                            <option value="malware">Malware & Ransomware</option>
+                            <option value="other">Other Cybercrimes</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="incidentDate">Date of Incident*</label>
+                    <input type="date" id="incidentDate" name="incidentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="complaintTitle">Complaint Title*</label>
+                    <input type="text" id="complaintTitle" name="complaintTitle" placeholder="Brief description of the issue" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="complaintDetails">Complaint Details*</label>
+                    <textarea id="complaintDetails" name="complaintDetails" rows="6" placeholder="Provide detailed information about the cybercrime incident" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Supporting Evidence (if any)</label>
+                    <div class="file-upload" id="file-upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span class="file-upload-text">Drag & drop files or click to browse</span>
+                        <input type="file" id="file-upload-input" multiple>
+                    </div>
+                    <div id="file-list"></div>
+                </div>
+                
+                <div class="priority-indicator">
+                    <h3>Estimated Priority Level</h3>
+                    <p>Our AI algorithm will analyze your complaint and assign a priority level</p>
+                    <div class="priority-bar">
+                        <div class="priority-fill" id="priorityFill"></div>
+                    </div>
+                    <div class="priority-score" id="priorityScore">0/100</div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 30px;">
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Complaint</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">

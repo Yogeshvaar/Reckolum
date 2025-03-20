@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reckolum - Cybersecurity Complaint Management</title>
+    <link rel="stylesheet" href="intro1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Reckolum</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="register-complaint.html">Register a Complaint</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>AI-Powered Cybersecurity Complaint Management</h1>
+            <p>Register your cybersecurity complaint and get prioritized assistance using our advanced ML models</p>
+            <a href="intro2.html" class="btn-primary">Register a Complaint</a>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Categories of Cybersecurity Crimes</h2>
+        <div class="category-container">
+            <div class="category-card">
+                <div class="icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Financial Fraud</h3>
+                <p>Identity theft, phishing scams, credit card fraud, and banking scams</p>
+                <a href="register-complaint.html?type=financial" class="btn-secondary">Report</a>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Women & Child Safety</h3>
+                <p>Cyberbullying, online harassment, privacy violations, and exploitation</p>
+                <a href="register-complaint.html?type=safety" class="btn-secondary">Report</a>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Data Breaches</h3>
+                <p>Unauthorized access to personal data, account hacking, and information leaks</p>
+                <a href="register-complaint.html?type=data" class="btn-secondary">Report</a>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">
+                    <i class="fas fa-virus-slash"></i>
+                </div>
+                <h3>Malware & Ransomware</h3>
+                <p>Computer viruses, ransomware attacks, and malicious software</p>
+                <a href="register-complaint.html?type=malware" class="btn-secondary">Report</a>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Other Cybercrimes</h3>
+                <p>Social media crimes, online scams, and other cybercrimes</p>
+                <a href="register-complaint.html?type=other" class="btn-secondary">Report</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How Our System Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Register Your Complaint</h3>
+                <p>Submit details of the cybercrime incident with all relevant information</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>AI Analysis</h3>
+                <p>Our ML models analyze and prioritize cases based on severity and urgency</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Case Assignment</h3>
+                <p>Cases are assigned to specialized cybersecurity experts</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Resolution</h3>
+                <p>Get updates and resolution on your registered complaint</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Reckolum</h3>
+                <p>Advanced AI-powered cybersecurity complaint management system</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Ask Us</h3>
+                <form id="queryForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="query" placeholder="Your Query" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Reckolum. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="intro1.js"></script>
+</body>
+</html>
